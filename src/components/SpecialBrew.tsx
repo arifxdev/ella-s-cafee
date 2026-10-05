@@ -90,6 +90,9 @@ export const SpecialBrew: React.FC<SpecialBrewProps> = ({ onDiscoverClick }) => 
                   alt="Ella's Special Müil Coffee"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/special_signature_latte.jpg';
+                  }}
                 />
               </div>
 

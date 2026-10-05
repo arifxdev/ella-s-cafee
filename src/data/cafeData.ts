@@ -1,5 +1,14 @@
 import { ProductItem } from '../types';
 
+// Standard Vite image imports - bundled automatically into dist/assets/ on Vercel/Netlify
+import heroGreenCup from '../assets/images/hero_green_cup_1791177988782.jpg';
+import pistachioCakeImg from '../assets/images/cake_pistachio_bliss_1791177998979.jpg';
+import chocolateCakeImg from '../assets/images/cake_chocolate_dream_1791178009334.jpg';
+import berryCakeImg from '../assets/images/cake_berry_delight_1791178019409.jpg';
+import specialLatteImg from '../assets/images/special_signature_latte_1791178030278.jpg';
+
+export { heroGreenCup, pistachioCakeImg, chocolateCakeImg, berryCakeImg, specialLatteImg };
+
 export const FEATURED_CAKES: ProductItem[] = [
   {
     id: 'aatis-pistachio',
@@ -10,7 +19,7 @@ export const FEATURED_CAKES: ProductItem[] = [
     description: 'Slow-steeped Sicilian pistachio sponge layered with whipped mascarpone cream and finished with roasted Iranian emerald pistachio crumbles. A signature Ella favourite.',
     price: 8.50,
     currency: '$',
-    image: '/src/assets/images/cake_pistachio_bliss_1791177998979.jpg',
+    image: pistachioCakeImg || '/images/cake_pistachio_bliss.jpg',
     bgColor: '#E3ECE2', // Pale pistachio tint
     accentColor: '#44634E',
     btnColor: '#1A2F23', // Dark forest green
@@ -29,7 +38,7 @@ export const FEATURED_CAKES: ProductItem[] = [
     description: '70% Valrhona single-origin dark chocolate entremet with a glossy mirror glaze, silky hazelnut praline mousse core, and a hand-tempered chocolate truffle heart.',
     price: 9.00,
     currency: '$',
-    image: '/src/assets/images/cake_chocolate_dream_1791178009334.jpg',
+    image: chocolateCakeImg || '/images/cake_chocolate_dream.jpg',
     bgColor: '#F6EEE6', // Soft warm caramel/almond tint
     accentColor: '#9C6234',
     btnColor: '#A56C36', // Warm caramel bronze
@@ -48,7 +57,7 @@ export const FEATURED_CAKES: ProductItem[] = [
     description: 'Slow-baked Madagascar vanilla bean Basque cheesecake topped with a compote of freshly harvested wild blueberries, tart raspberries, and ruby coulis.',
     price: 9.50,
     currency: '$',
-    image: '/src/assets/images/cake_berry_delight_1791178019409.jpg',
+    image: berryCakeImg || '/images/cake_berry_delight.jpg',
     bgColor: '#FAEAEC', // Soft rose pink blush tint
     accentColor: '#A84357',
     btnColor: '#B64A60', // Rose blush crimson
@@ -69,7 +78,7 @@ export const SPECIAL_BREW: ProductItem = {
   description: 'Our house specialty combines a concentrated double-shot of high-altitude Ethiopian Yirgacheffe espresso with silky condensed milk infusion and hand-textured microfoam, dusted with organic Ceylon cinnamon.',
   price: 6.25,
   currency: '$',
-  image: '/src/assets/images/special_signature_latte_1791178030278.jpg',
+  image: specialLatteImg || '/images/special_signature_latte.jpg',
   bgColor: '#F8F5EE',
   accentColor: '#C38B52',
   btnColor: '#1A2F23',
@@ -92,7 +101,7 @@ export const EXTENDED_MENU: ProductItem[] = [
     description: 'Velvety cream cheese whipped with spiced Belgian speculoos cookie butter on a crunchy caramel biscuit crust.',
     price: 8.75,
     currency: '$',
-    image: '/src/assets/images/cake_chocolate_dream_1791178009334.jpg',
+    image: chocolateCakeImg || '/images/cake_chocolate_dream.jpg',
     bgColor: '#F7EFE6',
     accentColor: '#B36D2A',
     btnColor: '#1A2F23',
@@ -108,7 +117,7 @@ export const EXTENDED_MENU: ProductItem[] = [
     description: 'Traditional Spanish high-heat cheesecake with a deeply caramelized exterior and a gooey, molten vanilla custard center.',
     price: 9.00,
     currency: '$',
-    image: '/src/assets/images/cake_pistachio_bliss_1791177998979.jpg',
+    image: pistachioCakeImg || '/images/cake_pistachio_bliss.jpg',
     bgColor: '#F8F5EE',
     accentColor: '#8C5A2B',
     btnColor: '#1A2F23',
@@ -124,7 +133,7 @@ export const EXTENDED_MENU: ProductItem[] = [
     description: 'Chilled ristretto pulled directly over caramelized sweet milk and filtered mountain spring ice.',
     price: 6.50,
     currency: '$',
-    image: '/src/assets/images/hero_green_cup_1791177988782.jpg',
+    image: heroGreenCup || '/images/hero_green_cup.jpg',
     bgColor: '#F4ECE1',
     accentColor: '#A56C36',
     btnColor: '#1A2F23',
@@ -140,7 +149,7 @@ export const EXTENDED_MENU: ProductItem[] = [
     description: 'First-harvest ceremonial grade Uji matcha whisked with warm oat milk and a touch of Madagascar vanilla bean nectar.',
     price: 6.75,
     currency: '$',
-    image: '/src/assets/images/hero_green_cup_1791177988782.jpg',
+    image: heroGreenCup || '/images/hero_green_cup.jpg',
     bgColor: '#E6ECE5',
     accentColor: '#3D5E44',
     btnColor: '#1A2F23',

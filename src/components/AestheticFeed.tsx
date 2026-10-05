@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Instagram, Heart, MessageCircle, Eye, Sparkles, TrendingUp, Compass, MapPin, X, ArrowUpRight } from 'lucide-react';
+import { heroGreenCup, pistachioCakeImg, chocolateCakeImg, berryCakeImg, specialLatteImg } from '../data/cafeData';
 
 interface AestheticPost {
   id: string;
@@ -22,7 +23,7 @@ interface AestheticPost {
 const INITIAL_POSTS: AestheticPost[] = [
   {
     id: 'post-1',
-    image: '/src/assets/images/cake_pistachio_bliss_1791177998979.jpg',
+    image: pistachioCakeImg || '/images/cake_pistachio_bliss.jpg',
     location: 'Kohsar Market, F-6 Islamabad',
     caption: 'Freshly plated Aatis Pistachio Bliss with crushed Iranian pistachios & whipped mascarpone. Morning batch just arrived from our patisserie kitchen.',
     tags: ['#ellascafe', '#pistachiobliss', '#islamabadcafes', '#artisanpatisserie'],
@@ -41,7 +42,7 @@ const INITIAL_POSTS: AestheticPost[] = [
   },
   {
     id: 'post-2',
-    image: '/src/assets/images/hero_green_cup_1791177988782.jpg',
+    image: heroGreenCup || '/images/hero_green_cup.jpg',
     location: 'Conservatory Room, Islamabad',
     caption: 'The art of morning microfoam. Hand-poured tulip on our dark forest ceramic fluted cup. 100% single-origin Ethiopian roast.',
     tags: ['#latteart', '#singleorigin', '#greenceramics', '#ellascoffee'],
@@ -60,7 +61,7 @@ const INITIAL_POSTS: AestheticPost[] = [
   },
   {
     id: 'post-3',
-    image: '/src/assets/images/cake_chocolate_dream_1791178009334.jpg',
+    image: chocolateCakeImg || '/images/cake_chocolate_dream.jpg',
     location: 'Patisserie Lab, Lahore Gulberg',
     caption: 'Mirror-glaze perfection. 70% Valrhona dark chocolate entremet with single-estate hazelnut core and tempered chocolate heart.',
     tags: ['#valrhonachocolate', '#entremet', '#mirrorglaze', '#lahorefoodies'],
@@ -79,7 +80,7 @@ const INITIAL_POSTS: AestheticPost[] = [
   },
   {
     id: 'post-4',
-    image: '/src/assets/images/special_signature_latte_1791178030278.jpg',
+    image: specialLatteImg || '/images/special_signature_latte.jpg',
     location: 'Beverly Centre, Blue Area',
     caption: 'Müil Velvet brew on aged olive wood with vintage brass spoon. Smooth sweetness meeting double ristretto intensity.',
     tags: ['#spanishlatte', '#muilcoffee', '#woodentray', '#coffeetime'],
@@ -98,7 +99,7 @@ const INITIAL_POSTS: AestheticPost[] = [
   },
   {
     id: 'post-5',
-    image: '/src/assets/images/cake_berry_delight_1791178019409.jpg',
+    image: berryCakeImg || '/images/cake_berry_delight.jpg',
     location: 'High Tea Terrace, Kohsar F-6',
     caption: 'Ruby berry compote glistening on Madagascar vanilla bean cheesecake. Tart wild blueberries balancing velvety sweetness.',
     tags: ['#berrycheesecake', '#wildberries', '#hightea', '#ellascakes'],
@@ -396,6 +397,9 @@ const ParallaxPostCard: React.FC<ParallaxPostCardProps> = ({ post, isLiked, onLi
           alt={post.caption}
           className="w-full h-full object-cover will-change-transform"
           referrerPolicy="no-referrer"
+          onError={(e) => {
+            e.currentTarget.src = 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80';
+          }}
         />
 
         {/* Glare overlay for 3D effect */}
@@ -564,6 +568,9 @@ const PostModal: React.FC<{
             alt={post.caption}
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
+            onError={(e) => {
+              e.currentTarget.src = 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80';
+            }}
           />
         </div>
 

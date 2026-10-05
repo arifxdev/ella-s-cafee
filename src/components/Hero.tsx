@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Leaf, Coffee, Heart, ChevronRight } from 'lucide-react';
 import { MagneticButton } from './MagneticButton';
+import { heroGreenCup } from '../data/cafeData';
 
 interface HeroProps {
   onExploreClick: () => void;
@@ -175,10 +176,13 @@ export const Hero: React.FC<HeroProps> = ({ onExploreClick }) => {
                 <div className="relative w-full h-full rounded-tl-[140px] rounded-tr-[140px] rounded-br-[140px] rounded-bl-[30px] overflow-hidden group">
                   <img
                     ref={cupImgRef}
-                    src="/src/assets/images/hero_green_cup_1791177988782.jpg"
+                    src={heroGreenCup || '/images/hero_green_cup.jpg'}
                     alt="Handcrafted green ceramic cup with latte art"
                     className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      e.currentTarget.src = '/images/hero_green_cup.jpg';
+                    }}
                   />
 
                   {/* Delicate animated steam plumes rising from the latte foam */}
