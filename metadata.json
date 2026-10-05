@@ -1,0 +1,6 @@
+{
+  "name": "Ella's Cafe — Artisanal Coffee & Patisserie",
+  "description": "Production-ready, highly animated landing page for Ella's Cafe replicating the iconic European coffee and artisanal patisserie aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
